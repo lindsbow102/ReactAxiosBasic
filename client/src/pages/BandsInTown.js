@@ -8,19 +8,6 @@ class BandsInTown extends Component {
     q: ""
   };
 
-  // fetchData = () => {
-  //   const url = `${API_URL}${this.state.q}${post_API_URL}`;
-  //   axios
-  //     .get(url)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         info: data
-  //       });
-  //       console.log(data);
-  //       console.log(this.state.info);
-  //     });
-  // };
   fetchData = query => {
     API.search(query)
       .then(res => {
