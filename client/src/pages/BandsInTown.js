@@ -1,55 +1,73 @@
 import React, { Component } from "react";
-import moment from "moment";
-import API from "../utils/API";
+//import axios from "axios";
 
-class BandsInTown extends Component {
-  state = {
-    info: [],
-    q: ""
-  };
+// var corsUrl = "https://cors-anywhere.herokuapp.com/";
+// //var location = "Museum%20of%20Contemporary%20Art%20Australia";
+// //var location = "Museum of Contemporary Art Australia";
+// var key = "AIzaSyAF3KPheEYGJlRGxjAfHO6PFnRItaSvNwY";
+// var API_URL =
+//   "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=";
+// const post_API_URL =
+//   "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=" +
+//   key;
 
-  fetchData = query => {
-    API.search(query)
-      .then(res => {
-        this.setState({ info: res.data })
-        console.log(res.data);
-        console.log(typeof(res.data));
-      })
-      .catch(err => console.log(err));
-  };
+class GoogleMaps extends Component {
+  // state = {
+  //   arrayofids: [],
+  //   info: [],
+  //   q: ""
+  // };
 
-  componentDidMount() {
-    this.fetchData("pink");
-  }
+  // fetchData = () => {
+  //   //const url = `${API_URL}${this.state.q}${post_API_URL}`;
+  //   const url = `${corsUrl}${API_URL}${this.state.q}${post_API_URL}`;
+  //   axios
+  //     .get(url)
+  //     .then(response => response.data)
+  //     .then(data => {
+  //       this.setState({
+  //         info: data
+  //       });
+  //       console.log(data);
+  //       //console.log(this.state.info);
+  //       console.log(this.state.info.candidates);
+  //       console.log(typeof(this.state.info));
+  //       console.log(this.state.info.candidates[0].geometry.location.lat);
+  //     });
+  // };
+  
+  // //   componentDidMount() {
+  // //     this.fetchData();
+  // //   }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    console.log(event);
-    this.fetchData(this.state.q);
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   console.log(event);
+  //   this.fetchData();
+  // };
 
   render() {
     return (
       <div className="container">
-          <h1 className="text-center">React Axios Bands In Town</h1>
-        <form>
+        <h1 className="text-center">React Axios Google Maps</h1>
+        {/*<form>
           <div className="form-group col-xs-7">
             <label htmlFor="Query">
-              <strong>Artist Event Search</strong>
+              <strong>Location Search</strong>
             </label>
             <input
               className="form-control"
               id="Artist"
               type="text"
               value={this.state.q}
-              placeholder="Find Artist events here"
+              placeholder="Search locations here"
               name="q"
               onChange={this.handleInputChange}
               required
@@ -64,35 +82,22 @@ class BandsInTown extends Component {
               Search
             </button>
           </div>
-        </form>
+        </form>*/}
+
         <div className="container mt-10">
           <div className="col-xs-8">
-            {this.state.info.map(concerts => (
-              <div className="card text-center" key={concerts.id}>
+          <h1>This will eventually hold Google Maps info</h1>
+            {/*this.state.info.map(location => (
+              <div className="card text-center">
                 <div className="card-body">
-                  <h5 className="card-title">Artist: {concerts.lineup}</h5>
-                  <h6 className="card-subtitle mb-2">
-                    Date: {moment(concerts.datetime).format("MMM DD, YYYY")}
-                  </h6>
-                  <h6 className="card-subtitle mb-2">
-                    Time: {moment(concerts.datetime).format("h:mm a")}
-                  </h6>
-                  <h6 className="card-subtitle mb-2">
-                    Venue: {concerts.venue.name}
-                  </h6>
-                  <h6 className="card-subtitle mb-2">
-                    Location: {concerts.venue.city}, {concerts.venue.country}
-                  </h6>
-                  <h6 className="card-subtitle mb-2">
-                    <a href={concerts.url}>Link</a>
-                  </h6>
+                  <h5 className="card-title">Location: {location.candidates[0].name}</h5>
                 </div>
               </div>
-            ))}
+            ))*/}
           </div>
         </div>
       </div>
     );
   }
 }
-export default BandsInTown;
+export default GoogleMaps;

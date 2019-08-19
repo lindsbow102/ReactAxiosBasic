@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import OMDB from "./pages/OMDB";
 import BandsInTown from "./pages/BandsInTown";
-import GoogleMaps from "./pages/GoogleMaps";
 
 function App() {
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={BandsInTown} />
-            <Route exact path="/maps" component={GoogleMaps} />
+            <Route exact path="/" component={OMDB} />
+            <Route exact path="/maps" component={BandsInTown} />
           </Switch>
         </div>
       </Router>
