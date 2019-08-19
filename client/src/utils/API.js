@@ -1,20 +1,11 @@
 import axios from "axios";
 const BASEURL = "https://rest.bandsintown.com/artists/";
 const APIKEY = "/events?app_id=codingbootcamp";
+//const cors = "https://cors-anywhere.herokuapp.com/";
 
 export default {
-    search: function(query) {
-        return axios.get(BASEURL + query + APIKEY);
-      }
+  search: function(query) {
+    return axios.get(BASEURL + query + APIKEY);
+    //return axios.get(cors + "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3");
+  }
 };
-//   const url = `${API_URL}${this.state.q}${post_API_URL}`;
-  //   axios
-  //     .get(url)
-  //     .then(response => response.data)
-  //     .then(data => {
-  //       this.setState({
-  //         info: data
-  //       });
-  //       console.log(data);
-  //       console.log(this.state.info);
-  //     });

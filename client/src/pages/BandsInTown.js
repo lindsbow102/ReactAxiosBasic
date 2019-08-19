@@ -65,7 +65,6 @@ class BandsInTown extends Component {
             </button>
           </div>
         </form>
-
         <div className="container mt-10">
           <div className="col-xs-8">
             {this.state.info.map(concerts => (
