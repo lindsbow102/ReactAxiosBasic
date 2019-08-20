@@ -4,8 +4,10 @@ import axios from "axios";
 //const cors = "https://cors-anywhere.herokuapp.com/";
 
 export default {
-  search: function(query) {
-    // return axios.get("/events", { params: { q: query } });
-    return axios.get("/api/concerts", { params: { t: query } });
+  searchOMDB: function(query) {
+    return axios.get("/api/moviesearch", { params: { t: query } });
+  },
+  searchBands: function(artist) {
+    return axios.get("/api/concertsearch", { params: { artist }});
   }
 };
