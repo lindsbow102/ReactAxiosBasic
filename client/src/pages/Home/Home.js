@@ -8,6 +8,8 @@ const Home = () => {
         <button><a href="/concerts">See upcoming concerts</a></button>
         <br></br>
         <button><a href="/movies">Search movies</a></button>
+        <br></br>
+        <button><a href="/recipes">Search recipes</a></button>
         </div>
     )
 }

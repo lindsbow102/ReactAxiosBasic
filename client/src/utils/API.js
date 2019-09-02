@@ -9,5 +9,8 @@ export default {
   },
   searchBands: function(artist) {
     return axios.get("/api/concertsearch", { params: { artist }});
+  },
+  getRecipes: function(recipeQuery) {
+    return axios.get("/api/recipes", { params: { q: recipeQuery } });
   }
 };
